@@ -19,6 +19,7 @@ When each thread is created, it is given an ID that can be used to find the rang
 
 #### Calculations
 Let i be the thread ID, n be the max number, and t the number of threads: <br/>
+The following images may be hard to see in dark mode <br/>
 The starting number is calculated with ![equation](https://latex.codecogs.com/svg.image?%5Cfrac%7Bi*n%7D%7Bt%7D) <br />
 The ending number is calculated with ![equation](https://latex.codecogs.com/svg.image?%5Cfrac%7Bn(i&plus;1)%7D%7Bt%7D-1) <br/>
 
@@ -26,3 +27,10 @@ The ending number is calculated with ![equation](https://latex.codecogs.com/svg.
 This works without issue because 100,000,000 is a perfect square, and the square root of it is divisible by 8 perfectly. <br/>
 This means no threads will share any numbers in a range, and will not have the chance to try to do the same thing as another thread. <br/>
 The Sieve of Eratosthenes is a tried-and-trued method of finding primes and is much faster than the naive way of searching (checking if each individual number is prime by checking all possible divisors). 
+
+## How to Use
+In the directory where ThreadedPrimes.cpp was downloaded, in the command prompt, type and run the following: <br/>
+<code>
+g++ -g threadedPrimes.cpp -lpthread
+./a.out
+</code>
