@@ -42,6 +42,8 @@ int main() {
 			numPrimes++;
 		}
 	}
+
+	// Output
 	std::cout << time << " " << numPrimes << " " << sum << std::endl;
 
 	// Free and end
