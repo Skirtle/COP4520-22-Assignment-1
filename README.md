@@ -7,5 +7,6 @@ Find and sum all the primes between 1 and 100,000,000 (10^8)
 ## Method
 Uses the Sieve of Eratosthenes and multi-threading
 Each thread will be given an ID (from 0 to 7), and with that ID, it will calculate the range of numbers it will sieve through <br />
+Let i be the thread ID, n be the max number, and t the number of threads: <br />
 The starting number is calculated with ID \* (max number / thread count) <br />
 The ending number is calculated with max number \* ((ID + 1) / thread count) - 1 <br />
