@@ -32,6 +32,7 @@ int main() {
 		threads[i] = std::thread(worker, i, primes);
 	}
 	
+	// Join threads
 	for (int i = 0; i < threadCount; i++) {
 		threads[i].join();
 	}
@@ -77,6 +78,7 @@ int main() {
 }
 
 void worker(int tid, bool* primes) {
+	// Calculate range
 	int start, stop;
 	start = tid * (nSqrt / threadCount);
 	stop = ((nSqrt * (tid + 1)) / threadCount) - 1;
