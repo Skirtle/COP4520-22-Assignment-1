@@ -52,3 +52,6 @@ Alternating works because all of the threads use small numbers at the same time,
 Each color represents one of the 8 threads. In single-threaded, one thread did all the numbers. <br/>
 In partioned (named Old), each thread had a range that was uninterrupted by other threads. <br/>
 In alternating (named New), each thread gets a number in intervals of 8 <br/>
+## Timings
+![equation](https://github.com/Skirtle/COP4520-22-Assignment-1/blob/Optimized-MT/Images/Faster.PNG?raw=true)
+The timings of each approach
