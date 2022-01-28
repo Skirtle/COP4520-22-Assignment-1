@@ -6,7 +6,6 @@
 #include <cmath>
 #include <chrono>
 
-bool locked = false;
 // Constants
 int n = 1e8;
 int nSqrt = ceil(sqrt(n));
@@ -59,14 +58,12 @@ int main() {
 }
 
 void worker(int tid, bool* primes) {
-	while (locked) {
-		continue;
-	}
 	int start, stop;
 	start = tid * (nSqrt / threadCount);
 	stop = ((nSqrt * (tid + 1)) / threadCount) - 1;
 	// std::cout << "Unlocked thread " + std::to_string(tid)+ " with a range of " + std::to_string(start) + " to " + std::to_string(stop) + "\n";
 
+	// Sieve in the given range
 	for (int i = start; i <= stop; i++) {
 		if (primes[i]) {
 			int j = i * i, k = 0;
