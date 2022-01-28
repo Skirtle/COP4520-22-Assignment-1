@@ -20,7 +20,7 @@ int main() {
 	for (int i = 0; i < n; i++) {
 		primes[i] = true;
 	}
-	primes[0] = false;
+	primes[0] = false; // These two are automatically false
 	primes[1] = false;
 
 	// Start timer
@@ -50,6 +50,7 @@ int main() {
 		}
 	}
 
+	// Find 10 largest primes and order them
 	int largestPrimes[10];
 	int j = 9;
 	for (int i = n - 1; j >= 0; i--) {
@@ -59,8 +60,7 @@ int main() {
 		}
 	}
 
-	// Output
-	std::cout << time << " " << numPrimes << " " << sum << std::endl;
+	// Output to file
 	std::string filename = "primes.txt";
 	std::ofstream file(filename);
 	file << time << " " << numPrimes << " " << sum << std::endl;
@@ -68,11 +68,11 @@ int main() {
 		file << largestPrimes[i] << " ";
 	}
 	file << "\n";
-	file.close();
 
 
-	// Free and end
+	// Free, close, and end
 	free(primes);
+	file.close();
 	return 0;
 }
 
@@ -80,7 +80,6 @@ void worker(int tid, bool* primes) {
 	int start, stop;
 	start = tid * (nSqrt / threadCount);
 	stop = ((nSqrt * (tid + 1)) / threadCount) - 1;
-	// std::cout << "Unlocked thread " + std::to_string(tid)+ " with a range of " + std::to_string(start) + " to " + std::to_string(stop) + "\n";
 
 	// Sieve in the given range
 	for (int i = start; i <= stop; i++) {
