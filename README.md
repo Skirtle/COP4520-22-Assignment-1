@@ -1,8 +1,9 @@
 # COP4520-22-Assignment-1
 Assignment 1 for COP4520-22
+Made by Dalton Kajander
 
 ## Goal
-Find and sum all the primes between 2 and 100,000,000 (10^8) (inclusive)
+Find and sum all the primes between 2 and 100,000,000 (10^8, inclusive)
 
 ## Method
 Sieve of Eratosthenes and multi-threading
@@ -32,4 +33,4 @@ The Sieve of Eratosthenes is a tried-and-trued method of finding primes and is m
 In the directory where ThreadedPrimes.cpp was downloaded, in the command prompt, type and run the following: <br/>
 <code>g++ threadedPrimes.cpp -lpthread</code><br/>
 <code>./a.out</code><br/>
-This will produce a text file with information about the time it took, the amount of primes found, the sum of all of the primes found, and the 10 largest primes <br/>
+This will produce a text file named primes.txt with information about the time it took, the amount of primes found, the sum of the primes found, and the 10 largest primes <br/>
