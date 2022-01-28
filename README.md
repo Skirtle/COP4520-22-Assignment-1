@@ -30,7 +30,8 @@ This means no threads will share any numbers in a range, and will not have the c
 The Sieve of Eratosthenes is a tried-and-trued method of finding primes and is much faster than the naive way of searching (checking if each individual number is prime by checking all possible divisors). 
 
 ## How to Use
-In the directory where ThreadedPrimes.cpp was downloaded, in the command prompt, type and run the following: <br/>
+The file to download is ThreadedPrimes.cpp, which can be found by going into the Assignment folder. <br/>
+If you want to compile this yourself: in the directory where ThreadedPrimes.cpp was downloaded, in the command prompt, type and run the following: <br/>
 <code>g++ threadedPrimes.cpp -lpthread</code><br/>
-<code>./a.out</code><br/>
+<code>./a.out</code><br/> If it creates an exe instead, replace .out with .exe, or run it by double clicking it. 
 This will produce a text file named primes.txt with information about the time it took, the amount of primes found, the sum of the primes found, and the 10 largest primes <br/>
