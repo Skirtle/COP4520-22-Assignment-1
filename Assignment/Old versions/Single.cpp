@@ -41,6 +41,12 @@ int main() {
 
 	std::cout << "Single threaded took " + std::to_string(time) + " seconds" + "\n";
 
+	// Output to file
+	std::string filename = "single.txt";
+	std::ofstream file(filename);
+	file << time << std::endl;
+
 	free(primes);
+	file.close();
 	return 0;
 }
