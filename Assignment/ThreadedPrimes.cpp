@@ -33,7 +33,7 @@ int main() {
 	auto stop = std::chrono::high_resolution_clock::now();
 	float time = (std::chrono::duration_cast<std::chrono::milliseconds>(stop - start).count()) / 1000.0;
 
-	// Sum all primes
+	// Sum primes and amount of primes
 	unsigned long long sum = 0;
 	int numPrimes = 0;
 	for (int i = 2; i < n; i++) {
