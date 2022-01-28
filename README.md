@@ -30,7 +30,5 @@ The Sieve of Eratosthenes is a tried-and-trued method of finding primes and is m
 
 ## How to Use
 In the directory where ThreadedPrimes.cpp was downloaded, in the command prompt, type and run the following: <br/>
-<code>
-g++ -g threadedPrimes.cpp -lpthread <br/>
-./a.out
-</code>
+<code>g++ -g threadedPrimes.cpp -lpthread</code>
+<code>./a.out</code>
