@@ -80,11 +80,11 @@ int main() {
 void worker(int tid, bool* primes) {
 	// Calculate range
 	int start, stop;
-	start = tid * (nSqrt / threadCount);
-	stop = ((nSqrt * (tid + 1)) / threadCount) - 1;
+	// start = tid * (nSqrt / threadCount);
+	// stop = ((nSqrt * (tid + 1)) / threadCount) - 1;
 
 	// Sieve in the given range
-	for (int i = start; i <= stop; i++) {
+	for (int i = tid; i <= nSqrt; i+=8) {
 		if (primes[i]) {
 			int j = i * i, k = 0;
 			while (j < n) {
