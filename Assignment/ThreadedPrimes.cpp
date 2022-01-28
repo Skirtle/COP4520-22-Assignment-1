@@ -50,5 +50,3 @@ int main() {
 	free(primes);
 	return 0;
 }
-
-// Test
