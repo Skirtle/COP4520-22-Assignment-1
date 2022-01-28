@@ -40,35 +40,13 @@ int main() {
 	// End timer
 	auto stop = std::chrono::high_resolution_clock::now();
 	float time = (std::chrono::duration_cast<std::chrono::milliseconds>(stop - start).count()) / 1000.0;
-
-	// Sum primes and amount of primes
-	unsigned long long sum = 0;
-	int numPrimes = 0;
-	for (int i = 2; i < n; i++) {
-		if (primes[i]) {
-			sum += i;
-			numPrimes++;
-		}
-	}
-
-	// Find 10 largest primes and order them
-	int largestPrimes[10];
-	int j = 9;
-	for (int i = n - 1; j >= 0; i--) {
-		if (primes[i]) {
-			largestPrimes[j] = i;
-			j--;
-		}
-	}
+	
+	std::cout << "Partitioned multi-threaded took " + std::to_string(time) + " seconds" + "\n";
 
 	// Output to file
-	std::string filename = "primes.txt";
+	std::string filename = "partitions.txt";
 	std::ofstream file(filename);
-	file << time << " " << numPrimes << " " << sum << std::endl;
-	for (int i = 0; i < 10; i++) {
-		file << largestPrimes[i] << " ";
-	}
-	file << "\n";
+	file << time << std::endl;
 
 
 	// Free, close, and end
@@ -78,8 +56,13 @@ int main() {
 }
 
 void worker(int tid, bool* primes) {
-	// Sieve in multiples of 8 depending on tid
-	for (int i = tid; i <= nSqrt; i+=8) {
+	// Calculate range
+	int start, stop;
+	start = tid * (nSqrt / threadCount);
+	stop = ((nSqrt * (tid + 1)) / threadCount) - 1;
+
+	// Sieve in the given range
+	for (int i = start; i <= stop; i++) {
 		if (primes[i]) {
 			int j = i * i, k = 0;
 			while (j < n) {
