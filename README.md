@@ -49,3 +49,6 @@ The reason this runs better than partioned is because of thread 0. In partioned,
 Alternating works because all of the threads use small numbers at the same time, and each thread speeds up at the same rate and roughly the same time. <br/>
 ## Visualization of these approaches
 ![equation](https://github.com/Skirtle/COP4520-22-Assignment-1/blob/Optimized-MT/Images/Untitled.png?raw=true)
+Each color represents one of the 8 threads. In single-threaded, one thread did all the numbers. <br/>
+In partioned (named Old), each thread had a range that was uninterrupted by other threads. <br/>
+In alternating (named New), each thread gets a number in intervals of 8 <br/>
