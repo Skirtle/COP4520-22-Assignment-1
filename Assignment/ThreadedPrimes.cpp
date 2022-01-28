@@ -5,6 +5,7 @@
 #include <vector>
 #include <cmath>
 #include <chrono>
+#include <fstream>
 
 // Constants
 int n = 1e8;
@@ -49,8 +50,26 @@ int main() {
 		}
 	}
 
+	int largestPrimes[10];
+	int j = 9;
+	for (int i = n - 1; j >= 0; i--) {
+		if (primes[i]) {
+			largestPrimes[j] = i;
+			j--;
+		}
+	}
+
 	// Output
 	std::cout << time << " " << numPrimes << " " << sum << std::endl;
+	std::string filename = "primes.txt";
+	std::ofstream file(filename);
+	file << time << " " << numPrimes << " " << sum << std::endl;
+	for (int i = 0; i < 10; i++) {
+		file << largestPrimes[i] << " ";
+	}
+	file << "\n";
+	file.close();
+
 
 	// Free and end
 	free(primes);
