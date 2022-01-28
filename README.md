@@ -48,4 +48,4 @@ The alternating multi-threaded version took, on average, 0.5394 for the same tes
 The reason this runs better than partioned is because of thread 0. In partioned, thread 0 had all of the smallest numbers which would go into the most amount of numbers. Because of that, it had the most amount of computations to do and took a considerable amount of time. <br/>
 Alternating works because all of the threads use small numbers at the same time, and each thread speeds up at the same rate and roughly the same time. <br/>
 ## Visualization of these approaches
-![equation](https://imgur.com/a/NggxfxY)
+![equation](https://github.com/Skirtle/COP4520-22-Assignment-1/blob/Optimized-MT/Images/Untitled.png?raw=true)
